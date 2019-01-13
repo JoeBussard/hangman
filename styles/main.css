@@ -1,0 +1,105 @@
+/* Ad majorem Dei gloriam inque hominum salutem */
+body {
+  margin:0;
+  padding:0;
+  background:skyblue;
+  font-family: Helvetica, Arial, Sans-Serif;
+
+}
+
+#error_label {
+  color:red;
+}
+
+.index-header-class {
+  background:gold;
+  display:block;
+  text-align:center;
+}
+
+.index-header-class h1{
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  font-size:22pt;
+}
+
+.index-header-class h2{
+  margin:0;
+  padding:0;
+  font-size:14pt; 
+}
+
+.dropdown-container {
+  margin:0px;
+  background:black;
+  display:block;
+}
+
+.dropdown-container ul {
+  margin: 0px;
+  padding: 0px;
+  display:inline;
+}
+
+.dropdown-container ul li {
+  padding:0px 4px 0px 4px;
+  margin: 0px;
+  display:inline;
+  background:black;
+  color:white;
+}
+
+.dropdown-container ul ul {
+  display:block *important;
+  color:red *important;
+  background: orange;
+}
+.dropdown-container ul ul li {
+  display:block;
+}
+
+.dropdown-container ul a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.dropdown-trigger {
+  display:inline-block;
+  position:relative;
+}
+
+.dropdown-contents {
+  position:absolute;
+  visibility:hidden;
+  width:131px;
+}
+
+.dropdown-trigger:hover .dropdown-contents {
+  position:absolute;
+  display:block;
+  background:green *important;
+  visibility:visible;
+}
+
+.main-body-container{
+  width:90vw;
+  margin:auto;
+}
+
+.main-body-container a {
+  color:hotpink;
+  text-decoration:none;
+}
+
+
+footer {
+  font-size:10px;
+  margin:0px;
+  opacity:85%;
+  text-align:center;
+}
+
+
+
+

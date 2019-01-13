@@ -1,0 +1,45 @@
+<!-- Ad Majorem Dei Gloriam -->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Practice 3</title>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="styles/main.css" type="text/css">
+  </head>
+
+  <body>
+    <header>
+      <div class=index-header-class>
+        <h1>JavaScript Practice Project 3</h1>
+        <h2>Building a hangman game</h2>
+      </div>
+    </header>
+
+    <nav>
+    </nav>
+    
+    <div class=main-body-container> 
+    <p id=plan>
+      The plan for this website is as follows<br>
+      I'll write a hangman game where a user enters the secret word.<br>
+      The word will be displayed in underscores as in _ _ _ _ _ _ . <br>
+      The user's friend will take over and try to guess the word one letter at a time.</br>
+      Correct letters will replace underscores _ O O _ _ _ <br>
+      Wrong letters will decrement number of guesses and will be placed in their own container. <br>
+      When the word is complete, we'll increment "Hi-Score" and enter a new secret word.<br>
+    </p>
+    <button type='button' onclick=play_game()>Click here to start</button>
+    <p id=current_word>Current word</p>
+    </div>
+
+    <footer>
+      <p>Copyright &copy; JoeBussard 2019</p>
+      <p>Project posted to GitHub under MIT License</p>
+    </footer>
+
+  </body>
+
+</html>
