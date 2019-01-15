@@ -18,8 +18,9 @@ function secret_word(){
 }
 
 function play_game() {
-  //declare variables
-  var secret = "";
+  //get_word_from_dictionary(123);
+ // //declare variables
+ var secret = "";
   var guess = "";
   var secret_array = [];
   var current_array = [];
@@ -161,6 +162,33 @@ function check_guess(guess, secret_array, curr) {
   // if we didn't find a correct, return false.
   if (!flag) return false; else return current_array;
 }
+
+//use my json dictionary to get a random word.
+function get_word_from_dictionary(random) {
+  console.log("entered get word from dictionary");
+  var rand = random;
+
+  var xhttp = new XMLHttpRequest();
+  console.log('a');
+  xhttp.onreadystatechange = function() {
+console.log('d');
+//sole.log(xhttpsponseText[Math.floor(Math.random()*responseText.length)]);
+    if (this.readyState == 4 && this.status == 200) {
+//      var response = JSON.parse(xhttp.responseText);
+console.log('b');
+      console.log(response[Math.floor(Math.random()*response.length)]);
+    }
+  };
+  console.log('c');
+  xhttp.open("GET", "dictionary.json", true);
+  xhttp.send();
+
+
+}
+
+
+
+
 
 
 
