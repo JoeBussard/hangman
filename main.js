@@ -28,6 +28,8 @@ function play_game() {
   var lives = 6; //edit this to make it more difficult
                  // arm + arm + leg + leg + body + head = 6
   //set up our word
+
+  $('.index-header-class').delay(1).hide(500).delay(1000).show(1000);
   var wrong_array = [];
   do {
     secret = secret_word();
@@ -163,7 +165,7 @@ function check_guess(guess, secret_array, curr) {
   if (!flag) return false; else return current_array;
 }
 
-//use my json dictionary to get a random word.
+//use my json dictionary to get a random word. uses a weird method from a learncode.academy video
 function get_word_from_dictionary(random) {
   console.log("entered get word from dictionary");
   var rand = random;
