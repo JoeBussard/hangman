@@ -1,4 +1,5 @@
-function get_word_from_dictionary(random) {
+function get_word_from_dictionary_rando(random) {
+  console.log("entered rando.js");
   console.log("entered get word from dictionary");
   var rand = random;
   var dictionary;

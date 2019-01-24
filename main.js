@@ -12,15 +12,20 @@
 */
 
 
-
+/***************
+function secret_word()
+The purpose of this function is to ask the user, or perhaps a friend of the user sitting next to him or her, to input a word.  Ideally, this word will be used as the word that the user tries to guess. */
 function secret_word(){
   return prompt("What is the secret word?", "enter word here.");
 }
-
+/************** function play_game()
+This is the workhorse function of the entire program.  This is what is called when the start button is clicked.  This function runs the entire game from start to finish.  It calls multiple other functions that are also at the global scope level to this file.  It starts with declaring all the variables: The secret word and its array, the current guess, the progress/current word and its array, the array of incorrect letters, and the number of lives.
+It selects a random word from the dictionary using get_word_from_dictionary(rand);  It also has a piece of jquery animation for fun.**/
 function play_game() {
+  console.log("anything???");
   //get_word_from_dictionary(123);
- // //declare variables
- var secret = "";
+  // //declare variables
+  var secret = "";
   var guess = "";
   var secret_array = [];
   var current_array = [];
@@ -28,17 +33,17 @@ function play_game() {
   var lives = 6; //edit this to make it more difficult
                  // arm + arm + leg + leg + body + head = 6
   //set up our word
-  get_word_from_dictionary(123);
+  var word_from_dictionary = get_word_from_dictionary("foo");
   $('.index-header-class').delay(1).hide(500).delay(1000).show(1000);
   var wrong_array = [];
   do {
     secret = secret_word();
   } while (!secret);
   console.log(secret);
-  secret_array = secret.split("");  
+//  secret_array = word_from_dictionary.split("");  
   current_array = fill_current_with_blanks(secret_array);
   console.log(secret_array);
-
+  
 //replace the contents of this loop with a function
 while ((lives > 0) && (!is_equal(secret_array, current_array))) {
   update_lives(lives);
@@ -175,16 +180,18 @@ function check_guess(guess, secret_array, curr) {
 function get_word_from_dictionary(random) {
   console.log("entered get word from dictionary");
   var rand = random;
-
+  word_to_return = "";
   var xhttp = new XMLHttpRequest();
   console.log('a');
   xhttp.onreadystatechange = function() {
   console.log('d');
     if (this.readyState == 4 && this.status == 200) {
       console.log('b');
+      word_to_return = this.responseText[Math.floor(Math.random()*this.responseText.length)]l
       console.log(this.responseText[Math.floor(Math.random()*this.responseText.length)]);
+      return word_to_return;
     }
-  };
+  }//;
   console.log('c');
   xhttp.open("GET", "dictionary.json", true);
   xhttp.send();
