@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <title>Practice 3</title>
     <script src='rando.js'></script>
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
     <script src='main.js'></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
     <link rel="stylesheet" href="styles/main.css" type="text/css">
   </head>
 
@@ -33,13 +33,14 @@
       Wrong letters will decrement number of guesses and will be placed in their own container. <br>
       When the word is complete, we'll increment "Hi-Score" and enter a new secret word.<br>
     </p>
-    <button id='start_button' type='button' onclick=get_word_from_dictionary(0)>Click here to start</button>
-    <button id='a' type='button' onclick=get_word_from_dictionary_rando(0)>Click here to guess a letter</button>
+    <button id='start_button' type='button' onclick=play_game()>Click here to start</button>
+    <button id='a'            type='button' onclick=get_word_from_dictionary_rando(0)>Click here to guess a letter</button>
     <button id='debug' type='button' onclick=secret_word()>run secret_word();</button>
     <button onclick=update_lives(100)>update_lives(100)</button>
     <p id=current_word>Current word</p>
+    <p id=definition>Definition of the word</p>
     <p id=secret_word>_ _ _ _ _ _ _ _</p>
-    <p id=failure_box></p>
+    <p id=failure_box></>
 
     </div>
 
