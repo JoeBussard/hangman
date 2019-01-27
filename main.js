@@ -168,6 +168,14 @@ function fill_current_with_blanks (sec) {
 }
 
 //this function iterates through the secret word and checks for correct words
+/*****
+This is a useful function to check a guess.
+If the letter is correct, then it returns what the array should be.
+If its false, then it returns false.
+so if you pass "a", "apple", and "_ _ _ _ _"
+it returns "a _ _ _ _"
+*****/
+
 function check_guess(guess, secret_array, curr) {
   console.log(secret_array);
   var current_array = curr;
