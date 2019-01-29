@@ -28,7 +28,11 @@ function get_word_from_dictionary_rando(random) {
   xhttp.send();
   console.log(Math.random());
 }
- 
+
+
+
+
+
 /*****
 This function updates the paragraph that shows the secret word (Debug purposes only)
 It doesn't show an array.  It's only a string.
@@ -45,6 +49,8 @@ function update_def_paragraph(def) {
   document.getElementById('definition').innerHTML = def
 }
 
+
+function IN_PROGRESS() {
 /*****
 Ok so this was copied from the megafunction.
 It's the main game loop from the mega.
@@ -121,4 +127,5 @@ current_letter() is a prompt.
     add alert("WRONG!");
     console.log('that was an incorrect guess');
   }
+}
 }

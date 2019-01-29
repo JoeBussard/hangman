@@ -34,15 +34,16 @@ function play_game() {
   var lives = 6; //edit this to make it more difficult
                  // arm + arm + leg + leg + body + head = 6
   //set up our word
-  var word_from_dictionary = get_word_from_dictionary_rando("foo");
+//////////  var word_from_dictionary = get_word_from_dictionary_main("foo");
   $('.index-header-class').delay(1).hide(500).delay(1000).show(1000);
   var wrong_array = [];
   console.log("Escaped word from dictionary");
   do {
     secret = secret_word();
   } while (!secret);
-  console.log(secret);
-  secret_array = word_from_dictionary.split("");  
+  console.log("Secret is: " + secret);
+  secret_array = secret.split("");
+//  secret_array = word_from_dictionary.split("");  
 
   current_array = fill_current_with_blanks(secret_array);
   console.log(secret_array);
@@ -244,7 +245,7 @@ function get_word_from_dictionary(random) {
       console.log(     this.responseText[Math.floor(Math.random()*this.responseText.length)]);
       return word_to_return;
     }
-  }//;
+  };
   console.log('c');
   xhttp.open("GET", "dictionary.json", true);
   xhttp.send();
