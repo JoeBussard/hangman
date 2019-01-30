@@ -32,13 +32,14 @@ Probably will need to research .onClick() function that I've seen..
      //console.log(this.responseText);//[Math.floor(Math.random()*this.responseTe    xt.length)]);
       dictionary = JSON.parse(this.responseText);
       var random_word = Object.keys(dictionary);
-      for (x in dictionary){
-    
-      }   
+      console.log("ok"); 
       var index = Math.floor(Math.random()*random_word.length);
-      console.log("Random word is: " + random_word[index])
+//      var secret = fill_current_with_blanks(random_word[index]);
+      console.log("Random word is: " + random_word[index]);
       console.log("Definition is: " + Object.values(dictionary)[index]);
       update_definition_paragraph(Object.values(dictionary)[index]);
+
+      update_curr_paragraph(secret);
 /*****
 These functions aren't defined locally so let's comment
 them out until we have them implemented somehow...
@@ -73,7 +74,9 @@ updates the paragraph that shows you what the current paragraph is
 function update_curr_paragraph(new_word) {
   console.log("ok, we're in the update word paragraph..");
   var word = new_word;
-  document.getElementById("current_word").innerHTML = word;
+  var array = [];
+  array = word.split("");
+  document.getElementById("current_word").innerHTML = array;
 }
 
 function update_definition_paragraph(new_def) {
