@@ -34,12 +34,12 @@ Probably will need to research .onClick() function that I've seen..
       var random_word = Object.keys(dictionary);
       console.log("ok"); 
       var index = Math.floor(Math.random()*random_word.length);
-//      var secret = fill_current_with_blanks(random_word[index]);
+     //      var secret = fill_current_with_blanks(random_word[index]);
       console.log("Random word is: " + random_word[index]);
       console.log("Definition is: " + Object.values(dictionary)[index]);
       update_definition_paragraph(Object.values(dictionary)[index]);
 
-      update_curr_paragraph(secret);
+      update_curr_paragraph(random_word[index]);
 /*****
 These functions aren't defined locally so let's comment
 them out until we have them implemented somehow...
@@ -83,3 +83,6 @@ function update_definition_paragraph(new_def) {
   var def = new_def; 
   document.getElementById("definition").innerHTML = def;
 }
+
+
+

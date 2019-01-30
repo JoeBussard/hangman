@@ -127,7 +127,7 @@ function update_user(word) {
     word_str += " " + word[i];
   }
   alert("So far, the word is " + word_str);
-}
+:x
 
 //quick way to compare arrays of equal lengths
 function is_equal(a, b) {

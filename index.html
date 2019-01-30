@@ -35,14 +35,15 @@
       When the word is complete, we'll increment "Hi-Score" and enter a new secret word.<br>
     </p>
     <button id='start_button' type='button' onclick=play_game()>Click here to start</button>
-    <button id='a'            type='button' onclick=get_word_from_dictionary_rando(0)>Click here to guess a letter</button>
+    <button id='a'            type='button' onclick=get_word_from_dictionary_rando(0)>get_word_from_dictionary_rando(0)</button>
     <button id='debug' type='button' onclick=secret_word()>run secret_word();</button>
-    <button onclick=update_lives(100)>update_lives(100)</button>
-    <button onclick=only_get(20)>run only_get(2)</button>
+    <button onclick=update_lives(100)>run update_lives(100)</button>
+    <button onclick=only_get(20)>run only_get(20)</button>
+    <button onclick=run_guess()>run run_guess()</button>
     <p id=current_word>Current word</p>
     <p id=definition>Definition of the word</p>
     <p id=secret_word>_ _ _ _ _ _ _ _</p>
-    <p id=failure_box></>
+    <p id=failure_box>A,B,C</>
 
     </div>
 
