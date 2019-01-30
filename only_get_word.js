@@ -11,7 +11,6 @@ function only_get(random) {
   console.log('let\'s log the state and status...');
   console.log('readyState = ' + this.readyState);
   console.log('this.status= ' + this.status);
-  alert("running alert in onreadystatechange()");
 /****
   man xttp.onreadystatechange()
 
@@ -39,6 +38,7 @@ Probably will need to research .onClick() function that I've seen..
       var index = Math.floor(Math.random()*random_word.length);
       console.log("Random word is: " + random_word[index])
       console.log("Definition is: " + Object.values(dictionary)[index]);
+      update_definition_paragraph(Object.values(dictionary)[index]);
 /*****
 These functions aren't defined locally so let's comment
 them out until we have them implemented somehow...
@@ -46,9 +46,6 @@ them out until we have them implemented somehow...
       update_def_paragraph(Object.values(dictionary)[index]);
 ****/
       console.log('done with onreadystatechange function');
-      console.log('now attempting to run next function');
-      run_code_after_readystatechange();
-      alert("Running alert while in the readystatechange function");
     }   
   };  
   console.log('finished defining the onreadystatechange function');
@@ -68,3 +65,18 @@ function run_code_after_readystatechange() {
 /****
 This is going to be the new js file... add update_*_paragraph's here
 ****/
+
+/****
+  man update_curr_paragraph(new_word);
+updates the paragraph that shows you what the current paragraph is
+****/
+function update_curr_paragraph(new_word) {
+  console.log("ok, we're in the update word paragraph..");
+  var word = new_word;
+  document.getElementById("current_word").innerHTML = word;
+}
+
+function update_definition_paragraph(new_def) {
+  var def = new_def; 
+  document.getElementById("definition").innerHTML = def;
+}
