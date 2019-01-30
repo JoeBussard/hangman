@@ -5,11 +5,31 @@ function only_get(random) {
   var dictionary;
   var xhttp = new XMLHttpRequest();
   var current = "Debug";
-  console.log('a');
+  console.log('Initialized random, dictionary, xhttp, current');
   xhttp.onreadystatechange = function() {
-  console.log('d');
+  console.log('entered the onreadystatechange function');
+  console.log('let\'s log the state and status...');
+  console.log('readyState = ' + this.readyState);
+  console.log('this.status= ' + this.status);
+  alert("running alert in onreadystatechange()");
+/****
+  man xttp.onreadystatechange()
+
+This is an interesting function.  It only runs after this entire 
+javascript program, only_get(random) is finished.
+
+This seems to be a paradox, as how can I run code after the program
+is finished?
+
+Will toy around will calling functions at the end
+of onreadystatechange function...
+
+Probably will need to research .onClick() function that I've seen..
+
+****/
+
     if (this.readyState == 4 && this.status == 200) {
-      console.log('b');
+      console.log('Entered the "readyState == 4 and status = 200 if stmt');
      //console.log(this.responseText);//[Math.floor(Math.random()*this.responseTe    xt.length)]);
       dictionary = JSON.parse(this.responseText);
       var random_word = Object.keys(dictionary);
@@ -17,14 +37,34 @@ function only_get(random) {
     
       }   
       var index = Math.floor(Math.random()*random_word.length);
-      console.log("random word is " + random_word[index])
-      console.log("definition is " + Object.values(dictionary)[index]);
+      console.log("Random word is: " + random_word[index])
+      console.log("Definition is: " + Object.values(dictionary)[index]);
+/*****
+These functions aren't defined locally so let's comment
+them out until we have them implemented somehow...
       update_curr_paragraph(random_word[index]);
       update_def_paragraph(Object.values(dictionary)[index]);
+****/
+      console.log('done with onreadystatechange function');
+      console.log('now attempting to run next function');
+      run_code_after_readystatechange();
+      alert("Running alert while in the readystatechange function");
     }   
   };  
-  console.log('c');
+  console.log('finished defining the onreadystatechange function');
+  console.log('running xhttp.open();');
   xhttp.open("GET", "dictionary.json", true);
+  console.log('running xhttp.send();');
   xhttp.send();
-  console.log(Math.random());
+  console.log("Math.random is: " + Math.random());
+  console.log('end of the only_get function');
 }
+
+function run_code_after_readystatechange() {
+  alert("How do I run this function if the program needs to end for   to run?");
+
+}
+
+/****
+This is going to be the new js file... add update_*_paragraph's here
+****/
