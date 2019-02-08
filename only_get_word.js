@@ -101,5 +101,13 @@ function update_definition_paragraph(new_def) {
   document.getElementById("definition").innerHTML = def;
 }
 
+function update_losers(losers){
+  document.getElementById("failure_box").innerHTML = losers;
+}
+
+function update_lives(lives){
+  document.getElementById("lives").innerHTML = lives;
+}
+
 
 

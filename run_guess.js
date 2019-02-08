@@ -10,6 +10,16 @@ function getCurrentFromHTML() {
   return word;
 }
 
+function getLosersFromHTML() {
+  var losers = document.getElementById("failure_box").innerHTML;
+  return losers;
+}
+
+function getLivesFromHTML() {
+  var lives = 0
+  lives = document.getElementById("lives").innerHTML;
+  return lives;
+}
 
 
 function buttonRunGuess() {
@@ -23,7 +33,16 @@ function buttonRunGuess() {
   if (check_guess(guess, secretArray, curr)) {
     curr = check_guess(guess, secretArray, curr);
   }
+  else {
+    ///////////////////write this function.
+    console.log("check_guess returned false.");
+    doWrongLetterGuessed(guess);
+  }
   update_cur_paragraph(curr);
+  if (getSecretFromHTML() == getCurrentFromHTML()) {
+    alert("You've won the game. Your hangman is cut free.");
+    alert("He dies of dysentary 2 months later.");
+  }
   return;
 }
 
@@ -55,3 +74,17 @@ function turnArrayIntoString(givenArray) {
   }
   return str;
 }
+
+function doWrongLetterGuessed(guess) {
+  console.log("entered doWrongLetterGuessed(guess)");
+  var lives = getLivesFromHTML();
+  var losers = getLosersFromHTML();
+  lives--;
+  losers = losers + guess;
+  console.log("lives="+lives+" and losers="+losers);
+  update_losers(losers);
+  update_lives(lives);
+}
+
+
+
