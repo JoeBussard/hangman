@@ -177,7 +177,7 @@ so if you pass "a", "apple", and "_ _ _ _ _"
 it returns "a _ _ _ _"
 *****/
 
-function check_guess(guess, secret_array, curr) {
+function check_guess_main(guess, secret_array, curr) {
   console.log(secret_array);
   var current_array = curr;
   console.log(current_array);
@@ -186,6 +186,7 @@ function check_guess(guess, secret_array, curr) {
     if (guess == secret_array[i]) {
       current_array[i] = guess;
       flag = true;
+      alert("your guess, " + current_array[i] + ", was true.");
     }
   }
   console.log(current_array);

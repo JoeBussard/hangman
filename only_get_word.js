@@ -38,7 +38,13 @@ Probably will need to research .onClick() function that I've seen..
       console.log("Random word is: " + random_word[index]);
       console.log("Definition is: " + Object.values(dictionary)[index]);
       update_definition_paragraph(Object.values(dictionary)[index]);
-
+      var blanks = [];
+      for (var i = 0; (i < (random_word[index].length)); i++) {
+        console.log("i = " + i);
+        blanks.push("*");
+      }
+      //blanks.push("_");
+      update_curr_paragraph(turnArrayIntoString(blanks));
       update_secret_paragraph(random_word[index]);
 /*****
 These functions aren't defined locally so let's comment
@@ -76,7 +82,9 @@ function update_curr_paragraph(new_word) {
   var word = new_word;
   var array = [];
   array = word.split("");
-  document.getElementById("current_word").innerHTML = array;
+  var blanks = "";
+  console.log("new_word: " + new_word);
+  document.getElementById("current_word").innerHTML = new_word;
 }
 
 function update_secret_paragraph(new_word) {
@@ -84,7 +92,7 @@ function update_secret_paragraph(new_word) {
   var word = new_word;
   var array = [];
   array = word.split("");
-  document.getElementById("secret_word").innerHTML = array;
+  document.getElementById("secret_word").innerHTML = new_word;
 }
 
 
