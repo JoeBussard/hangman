@@ -30,14 +30,25 @@ function buttonRunGuess() {
   curr = getCurrentFromHTML().split("");
   secretArray = getSecretFromHTML().split("");
   console.log("secretArray is " + secretArray);
-  if (check_guess(guess, secretArray, curr)) {
+//  var checkTest = check_guess(guess, secretArray, curr);
+//  console.log(checkTest);
+  var newCurr = check_guess(guess, secretArray, curr);
+  if (newCurr)
+    curr = newCurr;
+  else
+    doWrongLetterGuessed(guess);
+
+ /* if (check_guess(guess, secretArray, curr)) {
+    console.log("check_guess returned true");
     curr = check_guess(guess, secretArray, curr);
   }
   else {
     ///////////////////write this function.
     console.log("check_guess returned false.");
+   // console.log(
     doWrongLetterGuessed(guess);
   }
+*/
   update_cur_paragraph(curr);
   if (getSecretFromHTML() == getCurrentFromHTML()) {
     alert("You've won the game. Your hangman is cut free.");
@@ -56,13 +67,18 @@ function check_guess(guess, secret_array, curr) {
     if (guess == secret_array[i]) {
       current_array[i] = guess;
       flag = true;
-      alert("your guess, " + current_array[i] + ", was true.");
+//    alert("your guess, " + current_array[i] + ", was true.");
     }   
   }
   console.log(current_array);
   // return (flag) ? false : current_array;
   // if we didn't find a correct, return false.
-  if (!flag) return false; else update_curr_paragraph(turnArrayIntoString(current_array));;
+  if (!flag) return false; 
+  else { 
+    update_curr_paragraph(turnArrayIntoString(current_array));
+    return true;
+  }
+
 }
 
 function turnArrayIntoString(givenArray) {
